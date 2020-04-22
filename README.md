@@ -5,8 +5,9 @@ This repo has all (im still making going through the book) programs that I have 
 
 ## Index:
 1. [(trashy) Rock Paper Scissor Game](https://github.com/RoguedBear/AutomateTheboringStuff/blob/master/trashy%20RockPaper%20game.py "(trashy) Rock Paper Scissor Game") 
-		Features: Color coded UI (still in making)
-			Round system
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Features: Color coded UI (still in making)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Round system
 
 
 [PS]: Im still learning how to write/document READMEs
