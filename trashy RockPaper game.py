@@ -2,15 +2,19 @@
 import random, sys
 from os import system
 from time import sleep
+
 # These variables keep track of wins, losses, and ties.
 wins = 0
 losses = 0
 ties = 0
 
+# How long should the game be
 maxScore = input("How many points should the game last?\n")
 
-while wins + losses < int(maxScore): # The main game loop
+while wins + losses < int(maxScore): # The main game loop ; we don't count ties
     system('clear')
+
+    # Scoreboard Highlighting
     if wins > losses:
         win_print = '\x1b[1;32m'+ str(wins) + " Wins" '\x1b[0m'
         losses_print =  str(losses) + " Losses" +'\x1b[0m'
@@ -25,6 +29,8 @@ while wins + losses < int(maxScore): # The main game loop
         losses_print = str(losses) + " Losses"
         ties_print = str(ties) + " Ties"
     print('\x1b[1mScore:',f"{win_print}, {losses_print}, {ties_print}","\x1b[0m")
+
+
     while True: # The player input loop.
         print("\x1b[1;40;40mEnter your move: (r)ock, (p)aper, (s)cissors or (q)uit. \x1b[0m")
         playerMove = input("> ")
@@ -77,9 +83,10 @@ while wins + losses < int(maxScore): # The main game loop
         print('\x1b[33;5m'+"You Lose!\x1b[0m")
         losses += 1
 
-
+    # Giving user chance to see and observe
     input("\x1b[37;2mPress ENTER...\x1b[0m")
 
+# EndGame
 print("\n\nGAME OVER")
 if wins > losses:
     print("YOU WIN!!!")
