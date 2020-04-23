@@ -9,22 +9,22 @@ ties = 0
 
 maxScore = input("How many points should the game last?\n")
 
-while wins + losses <= int(maxScore): # The main game loop
+while wins + losses < int(maxScore): # The main game loop
     system('clear')
     if wins > losses:
-        win_print = '\x1b[1;32m'+ str(wins) + '\x1b[0m'
-        losses_print =  str(losses) + '\x1b[0m'
-        ties_print = '\x1b[0;34m'+ str(ties) + '\x1b[0m'
+        win_print = '\x1b[1;32m'+ str(wins) + " Wins" '\x1b[0m'
+        losses_print =  str(losses) + " Losses" +'\x1b[0m'
+        ties_print = '\x1b[0;34m'+ str(ties) + " Ties" + '\x1b[0m'
 
     elif wins < losses:
-        win_print =  str(wins) + '\x1b[0m'
-        losses_print = '\x1b[1;31m'+ str(losses) + '\x1b[0m'
-        ties_print = '\x1b[0;34m'+ str(ties) + '\x1b[0m'
+        win_print =  str(wins) + " Wins" + '\x1b[0m'
+        losses_print = '\x1b[1;31m'+ str(losses) + " Losses" + '\x1b[0m'
+        ties_print = '\x1b[0;34m'+ str(ties) + " Ties" + '\x1b[0m'
     else:
-        win_print = wins
-        losses_print = losses
-        ties_print = ties
-    print('\x1b[1mScore:',f"{win_print} Wins, {losses_print} Losses, {ties_print} Ties","\x1b[0m")
+        win_print = str(wins) + " Wins"
+        losses_print = str(losses) + " Losses"
+        ties_print = str(ties) + " Ties"
+    print('\x1b[1mScore:',f"{win_print}, {losses_print}, {ties_print}","\x1b[0m")
     while True: # The player input loop.
         print("\x1b[1;40;40mEnter your move: (r)ock, (p)aper, (s)cissors or (q)uit. \x1b[0m")
         playerMove = input("> ")
@@ -36,11 +36,13 @@ while wins + losses <= int(maxScore): # The main game loop
 
     # Display what the player chose:
     if playerMove == 'r':
-        print("ROCK versus...")
+        print("ROCK versus...", end='\t', flush=True)
     elif playerMove == 'p':
-        print("PAPER versus...")
+        print("PAPER versus...", end='\t', flush=True)
     elif playerMove == 's':
-        print("SCISSORS versus...")
+        print("SCISSORS versus...", end='\t', flush=True)
+
+    sleep(0.4)
 
     # Display what the computer chose:
     computerMove = random.choice(['r','p','s'])
@@ -78,6 +80,7 @@ while wins + losses <= int(maxScore): # The main game loop
 
     input("\x1b[37;2mPress ENTER...\x1b[0m")
 
+print("\n\nGAME OVER")
 if wins > losses:
     print("YOU WIN!!!")
 elif wins < losses:
