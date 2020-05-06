@@ -13,7 +13,18 @@ This repo has all the programs (im still going through the book) that I have mad
    - Round system &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<sub><sub><sub><font size = '0.5'>Duh </font></sub></sub></sub>)
 
 
+2. (trashy) Zigzag lines maker.
+    - broken, because i though i could make the zigzag work in a single line by using \r or carriage returns but no. It does not work.
 
+3. Collatz Series Program.
+   - Displays the Collatz series by taking any number from start
+
+4. Conway's Game of Life
+   - Simulate's the <i>Game Of Life</i> on a hardcoded grid area with a random beggining.
+
+5. Coin Flip Streak probability.
+   - Supposedly display's the probability of a streak of 6 attained by Heads or Tails in a sample space of 100 coin tosses.
+   - Does not give the right answer (according to me). <sub>How do I even make sure i get the right answer??</sub>
 
 \
 \
