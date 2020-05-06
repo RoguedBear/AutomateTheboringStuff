@@ -23,7 +23,7 @@ This repo has all the programs (im still going through the book) that I have mad
 4. [Conway's Game of Life](https://github.com/RoguedBear/AutomateTheboringStuff/blob/master/conwayGameOfLife.py)
    - Simulate's the <i>Game Of Life</i> on a hardcoded grid area with a random beggining.
 
-5. [Coin Flip Streak probability.](https://github.com/RoguedBear/AutomateTheboringStuff/blob/master/coinflipstreak.py)
+5. [(trashy) Coin Flip Streak probability.](https://github.com/RoguedBear/AutomateTheboringStuff/blob/master/coinflipstreak.py)
    - Supposedly display's the probability of a streak of 6 attained by Heads or Tails in a sample space of 100 coin tosses.
    - Does not give the right answer (according to me). <sub>How do I even make sure i get the right answer??</sub>
 
