@@ -11,7 +11,7 @@ This repo has all the programs (im still going through the book) that I have mad
    - Color coded UI (~~still in making~~ improvements required :confused: )
 
    - Round system &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<sub><sub><sub><font size = '0.5'>Duh </font></sub></sub></sub>)
-   -[ ] TODO: Will improve the "Graphics" with PyGame when i reach there
+   - [ ] TODO: Will improve the "Graphics" with PyGame when i reach there
 
 
 2. [(trashy) Zigzag lines maker.](https://github.com/RoguedBear/AutomateTheboringStuff/blob/master/zigzag.py)
