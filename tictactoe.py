@@ -178,18 +178,17 @@ def computerPlays(game_board ):
         copied_board = copy.copy(game_board)
         copied_board[move] = O
         score = minimax(copied_board, 0, False)
-        print(move, score)
         if score > bestScore:
             bestScore = score
             bestMove = move
             print(f"COMPUTER: Best move acquired: {bestMove}\tWith bestScore: {score}")
-            print(f"AVAILablemoves: {available_moves}")
     return bestMove
 
 
 
 
 # MAin game
+system('clear')
 print ("Welcome to TicTacToe!")
 print (f"You are the the first player {X}.")
 
@@ -241,7 +240,7 @@ for i in range(5):
             break
 
     # ASSUMING Linux, clearing screen
-#    system('clear')
+    system('clear')
 else:
     # GAme is tie
     print("TIE!!")
