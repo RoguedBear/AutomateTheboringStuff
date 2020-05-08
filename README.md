@@ -32,6 +32,7 @@ This repo has all the programs (im still going through the book) that I have mad
    - Color coded TicTacToe.
    - Uses (and I also learnt) Mini-Max algorithm.
    - All Hail ALGORITHMS!¡!¡!¡ :fireworks:
+   - Credits to AutomateTheboringStuff and The Coding Train 
 
 \
 \
