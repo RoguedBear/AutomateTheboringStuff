@@ -28,6 +28,11 @@ This repo has all the programs (im still going through the book) that I have mad
    - Supposedly display's the probability of a streak of 6 attained by Heads or Tails in a sample space of 100 coin tosses.
    - Does not give the right answer (according to me). <sub>How do I even make sure i get the right answer??</sub>
 
+6. [(not trashy) TicTacToe with Computer!! (using minimax algorithm ofc)](https://github.com/RoguedBear/AutomateTheboringStuff/blob/master/tictactoe.py)
+   - Color coded TicTacToe.
+   - Uses (and I also learnt) Mini-Max algorithm.
+   - All Hail ALGORITHMS!¡!¡!¡ :fireworks:
+
 \
 \
 \
