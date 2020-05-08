@@ -55,6 +55,17 @@ def hasWon(board):
 
 
 # TODO: Score each game
+def score(game_board, player):
+    players = {X: 'human', O: 'computer'}
+    result = hasWon(game_board)
+    if result is not None:
+        if players[result] == 'human':
+            # Human will minimise the computer, so negative.
+            return -1
+        elif players[result] == 'computer':
+            # Maximise computer, so positive
+            return 1
+
 
 # TODO: MINmax
 
@@ -79,19 +90,23 @@ for i in range(9):
         print("Turn for: " + turn + '. You would move on which space?')
         move = input('\x1b[0;;40m> ')
         print('\r\x1b[0m')
-        if board[move] not in [X, O]:
-            board[move] = turn
-            break
+        if move in '123456789':
+            if board[move] not in [X, O]:
+                board[move] = turn
+                break
+            else:
+                print("Place Already taken cheater.")
+                continue
         else:
-            print("Place Already taken cheater.")
+            print("Not a valid move")
             continue
-
     # Switch Turns
     if turn == X:
         turn = O
     else:
         turn = X
 
+    print(score(board, turn))
     # Check if game is over
     end_game = hasWon(board)
     if end_game is not None: #That means we have a victory
@@ -101,6 +116,7 @@ for i in range(9):
         else:
             print("YOU LOSE!!")
             break
+
 else:
     # GAme is tie
     print("TIE!!")
