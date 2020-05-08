@@ -6,6 +6,7 @@ board = {'1': '\x1b[2m1\x1b[0m', '2': '\x1b[2m2\x1b[0m', '3': '\x1b[2m3\x1b[0m',
          '4': '\x1b[2m4\x1b[0m', '5': '\x1b[2m5\x1b[0m', '6': '\x1b[2m6\x1b[0m',
          '7': '\x1b[2m7\x1b[0m', '8': '\x1b[2m8\x1b[0m', '9': '\x1b[2m9\x1b[0m'}
 
+debug_number = board
 # Initializing environmental variables. Geez.
 X = '\x1b[1;31mX\x1b[0m'
 O = '\x1b[1;32mO\x1b[0m'
@@ -202,7 +203,7 @@ for i in range(5):
         print("Turn for: " + turn + '. You would move on which space?')
         move = input('\x1b[0;;40m> ')
         print('\r\x1b[0m')
-        if move in '123456789':
+        if move in '123456789' and move not in '':
             if board[move] not in [X, O, '']:
                 board[move] = turn
                 break
@@ -215,14 +216,23 @@ for i in range(5):
 
     # Check if game has ended.
     end_game = hasWon(board)
+    # Check for ties because in the prev. verision, you run into trouble for the
+    # moveset: 3, 6, 1, 8 and boom you lose. because full board is not checked
+    # for ties
+    for j in board.values():
+        if j not in [X, O]:
+            break
+    else:
+        print("TIE!!")
+        break
     if end_game is not None: #That means we have a victory
-        # pdb.set_trace()
         if end_game == human:
             print("Human WINS!")
             break
         else:
             print("YOU LOSE!!")
             break
+
 
 
 
