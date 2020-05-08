@@ -147,7 +147,7 @@ def computerPlays(game_board ):
         copied_board = copy.copy(game_board)
         copied_board[move] = O
         score = minimax(copied_board, 0, False)
-        print('OUTSIDE RECURSION')
+
         if score > bestScore:
             bestScore = score
             bestMove = move
@@ -162,21 +162,13 @@ turn = X
 print ("Welcome to TicTacToe!")
 print (f"You are the the first player {X}.")
 
-for i in range(9):
+for i in range(5):
 
     printBoard(board)
 
     # Update Gameboard
     while True:
         # Check if game is over
-        end_game = hasWon(board)
-        if end_game is not None: #That means we have a victory
-            if end_game == human:
-                print("Human WINS!")
-                break
-            else:
-                print("YOU LOSE!!")
-                break
 
         print("Turn for: " + turn + '. You would move on which space?')
         move = input('\x1b[0;;40m> ')
@@ -197,11 +189,31 @@ for i in range(9):
     #
     # else:
     #     turn = X
+    end_game = hasWon(board)
+    if end_game is not None: #That means we have a victory
+        # pdb.set_trace()
+        if end_game == human:
+            print("Human WINS!")
+            break
+        else:
+            print("YOU LOSE!!")
+            break
 
 
 
     # COmputer plays its part
     board[computerPlays(board)] = O
+
+    # Now check endstate after computer's move
+    end_game = hasWon(board)
+    if end_game is not None: #That means we have a victory
+        # pdb.set_trace()
+        if end_game == human:
+            print("Human WINS!")
+            break
+        else:
+            print("YOU LOSE!!")
+            break
 else:
     # GAme is tie
     print("TIE!!")
