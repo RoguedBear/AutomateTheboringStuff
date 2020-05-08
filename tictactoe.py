@@ -87,6 +87,12 @@ def Score(game_board):
             # Maximise computer, so positive
             return 1
     else:
+        # CHeck if gameboard is filled since, minmax.
+        for boardState in game_board.values():
+            if boardState not in [X, O]:
+                break
+        else:
+            return 'FULL'
         return 0
 
 # MINmax
@@ -104,7 +110,7 @@ def minimax(game_board, depth, isMaximising):
     # Check if game is in end state:
 
     board_evaluation = Score(game_board)
-    if board_evaluation == 'FULL':
+    if board_evaluation == 'FULL': # For minimax to exit, ie the base case
         return 0
     if board_evaluation != 0: # game is in terminal state
         return board_evaluation
@@ -172,11 +178,12 @@ def computerPlays(game_board ):
         copied_board = copy.copy(game_board)
         copied_board[move] = O
         score = minimax(copied_board, 0, False)
-
+        print(move, score)
         if score > bestScore:
             bestScore = score
             bestMove = move
             print(f"COMPUTER: Best move acquired: {bestMove}\tWith bestScore: {score}")
+            print(f"AVAILablemoves: {available_moves}")
     return bestMove
 
 
@@ -234,7 +241,7 @@ for i in range(5):
             break
 
     # ASSUMING Linux, clearing screen
-    system('clear')
+#    system('clear')
 else:
     # GAme is tie
     print("TIE!!")
